@@ -2,7 +2,7 @@
 <html>
 	<meta charset="UTF-8">
 	<head>
-		<title>IDK What im doin'</title>
+		<title>Can U Listen to me?</title>
 		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 		<style>
 			@font-face {
@@ -38,7 +38,11 @@
 					filter: blur(0);
 				}
 			}
-   
+
+			.container {
+				text-align: center;
+			}
+			
 			.fade-in-element:nth-child(1) { animation-delay: 0s; }
 			.fade-in-element:nth-child(2) { animation-delay: 0.125s; }
 			.fade-in-element:nth-child(3) { animation-delay: 0.25s; }
@@ -60,21 +64,30 @@
 			.fade-in-element:nth-child(19) { animation-delay: 2.25s; }
 			.fade-in-element:nth-child(20) { animation-delay: 2.375s; }
 			.fade-in-element:nth-child(21) { animation-delay: 2.5s; }
+			.fade-in-element:nth-child(22) { animation-delay: 2.625s;}
+			.fade-in-element:nth-child(23) { animation-delay: 2.75s; }
+			.fade-in-element:nth-child(24) { animation-delay: 2.875s; }
+			.fade-in-element:nth-child(25) { animation-delay: 3s; }
+			.fade-in-element:nth-child(26) { animation-delay: 3.135s; }
+			.fade-in-element:nth-child(27) { animation-delay: 3.25s; }
+			.fade-in-element:nth-child(28) { animation-delay: 3.375s; }
+			.fade-in-element:nth-child(29) { animation-delay: 3.5s; }
 			
 			.in {
 				filter: blur(2px);
 				margin-top: 25px;
 			}
-   
+
 			body	{
 				background-color: #EAE9DA;
-				justify-content: center;
+				height: auto;
 				width: 1325px;
 				display: flex;
 				flex-direction: column;
 				flex-wrap: wrap;
+				align-content: center;
+				align-items: center;
 				justify-content: center;
-				align-items: stretch;
 				-webkit-touch-callout: none;
 				-webkit-user-select: none;
 				-khtml-user-select: none;
@@ -83,7 +96,7 @@
 				user-select: none;
 			}
 			
-			h1, h2 	{
+			h1, h2, h3 	{
 				color:#262626;
 				font-family: 'NeueRegradeExtraBold';
 				text-align: center;
@@ -94,6 +107,12 @@
 			
 			h2	{
 				font-size: 40px;
+			}
+
+			h3	{
+				font-size: 30px;
+				font-style: normal;
+				margin-bottom: -25px;
 			}
 			
 			.p1, .p2, .p3 	{
@@ -151,86 +170,165 @@
 				border: none;
 				Border-radius: 5px;
 			}
+
+			li {
+				display: inline-block;
+				font-size: 1.5em;
+				list-style-type: none;
+				padding: 1em;
+				text-transform: uppercase;
+				font-family: NeueRegradeExtraBold;
+			}
+			
+			li span {
+				display: block;
+				font-size: 4.5rem;
+			}
 			
 		</style>
+		<script>
+			let docTitle = document.title;
+			window.addEventListener("blur", () => {
+				document.title = "Okay U Wont Listen";
+			})
+			window.addEventListener("focus", () => {
+				document.title = docTitle;
+			});
+
+			(function () {
+				const second = 1000,
+					minute = second * 60,
+					hour = minute * 60,
+					day = hour * 24;
+			
+				//I'm adding this section so I don't have to keep updating this pen every year :-)
+				//remove this if you don't need it
+				let today = new Date(),
+					dd = String(today.getDate()).padStart(2, "0"),
+					mm = String(today.getMonth() + 1).padStart(2, "0"),
+					yyyy = today.getFullYear(),
+					nextYear = yyyy + 1,
+					dayMonth = "02/23/",
+					birthday = dayMonth + yyyy;
+				
+				today = mm + "/" + dd + "/" + yyyy;
+				if (today > birthday) {
+				birthday = dayMonth + nextYear;
+				}
+				//end
+				
+				const countDown = new Date(birthday).getTime(),
+					x = setInterval(function() {    
+			
+					const now = new Date().getTime(),
+						distance = countDown - now;
+			
+					document.getElementById("days").innerText = Math.floor(distance / (day)),
+						document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+						document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute));
+			
+					//do something later when date is reached
+					if (distance < 0) {
+						document.getElementById("countdown").style.display = "none";
+						document.getElementById("content").style.display = "block";
+						clearInterval(x);
+					} else {
+						document.getElementById("countdown").style.display = "block";
+						document.getElementById("content").style.display = "none";
+					}
+					//seconds
+					}, 0)
+				}());
+		</script>
 	</head>
 	<body>
-		<div class="fade-in-element">
-			<h1>HBD 23/02</h1>
-		</div>
-		<div class="fade-in-element">
-			<p class="p1">dear, [redacted]</p>
-		</div>
-		<div class="fade-in-element">
-			<p class="p1">Now that I am sixteen years old, please hbd to me :3. When the time is still going on, we will become old men or girls. That is how the world appears, and time continues. like the beautiful sky will be gone at a given time, rainfall will stop at a given time.</p>
-		</div>
-		<div class="fade-in-element">
-			<p class="p1">The sky will see us, and then the sky will tell us about itself. The sky will start to rain.</p>
-		</div>
-		<div class="fade-in-element">
-			<p class="p1">Rain always calms me when I'm sad. The rain also accompanied me when I was insulted. Rain is also what accompanies me when I'm happy. And rain is also what makes me happy and happy from year to year.</p>
-		</div>
-		<div class="fade-in-element">
-			<p class="p1">The rainfall will tell us about the world, and then the rainfall will stop. Like us, we will become old with time.</p>
-		</div>
-		<div class="fade-in-element">
-			<p class="p1">Thanks for bein' with me. Now I'm sixteen years old. I will become too old.</p>
-		</div>
-		<div class="fade-in-element">
-			<p class="p1">happy birthday</p>
-		</div>
-		<div class="fade-in-element">
-			<p class="p1">-naufal</p>
-		</div>
-		<div class="fade-in-element">
-			<p class="p1">现在我十六岁了，请对我说：3。当时间继续流逝时，我们都会变成老人或女孩。世界就是这样出现的，时间也在继续。就像美丽的天空会在特定的时间消失一样，降雨也会在特定的时间停止。</p>
-		</div>
-		<div class="fade-in-element">
-			<h2>[HBD]</h2>
-		</div>
-		<div class="fade-in-element">
-			<img 
-			src="ya[5B436EE].png" 
-			width=625 
-			height=450 
-			alt="23/02"
-			oncontextmenu="return false;"
-			/>
-		</div>
-		<div class="fade-in-element">
-			<hr>
-		</div>
-		<div class="fade-in-element">
-			<p class="p2">the rain continues to pour down on the city, there has been no light from the sun for the last 8 months. This is the longest rain ever recorded in history. The city lights keep turning on from night to night, the city parks keep getting wet so they can't be used as city decorations. the streets of the city reflect the view of the city buildings. The rain continued to fall and never stopped. The water continued to fall as if it were dancing across the vast sky.</p>
-		</div>
-		<div class="fade-in-element">
-			<p class="p3">someone played the piano with the song "can't help falling in love" in the city park, the piano was very wet because of the rain. the person seems to be feeling deep love for the person he loves.</p>
-		</div>
-		<div class="fade-in-element">
-			<hr>
-		</div>
-		<div class="fade-in-element">
-			<a href="https://sxvzustr.carrd.co" target="_blank" class="custom-button">
-				<span class="button-text">HBD</span>		
-			</a>
-		</div>
-		<div class="fade-in-element">
-			<hr>
-		</div>
-		<div class="fade-in-element">
-			<p class="p3">If the song/ audio does not autoplay u can play it below. the audio is looped. anyway, song name is lvs(var).</p>
-		</div>
-		<div class="fade-in-element">
-			<div class="box-audio">
-				<audio controls autoplay loop>
-					<source src="lvs_var.mp3" type="audio/mpeg" />
-					Your browser does not support
-				</audio>
+		<div class="container">
+			<div id="countdown">
+				<ul>
+					<li class="fade-in-element"><span id="days"></span>days</li>
+					<li class="fade-in-element"><span id="hours"></span>Hours</li>
+					<li class="fade-in-element"><span id="minutes"></span>Minutes</li>
+				</ul>
 			</div>
 		</div>
-		<div class="fade-in-element">
-			<div class="in">
-				<p class="p3">made by. miYoKo, sxvzustr, & noopalstr</p>
+		<div id="content">
+			<div class="fade-in-element">
+				<h1>HBD 23/02</h1>
+			</div>
+			<div class="fade-in-element">
+				<p class="p1">dear, [redacted]</p>
+			</div>
+			<div class="fade-in-element">
+				<p class="p1">Now that I am sixteen years old, please hbd to me :3. When the time is still going on, we will become old men or girls. That is how the world appears, and time continues. like the beautiful sky will be gone at a given time, rainfall will stop at a given time.</p>
+			</div>
+			<div class="fade-in-element">
+				<p class="p1">The sky will see us, and then the sky will tell us about itself. The sky will start to rain.</p>
+			</div>
+			<div class="fade-in-element">
+				<p class="p1">Rain always calms me when I'm sad. The rain also accompanied me when I was insulted. Rain is also what accompanies me when I'm happy. And rain is also what makes me happy and happy from year to year.</p>
+			</div>
+			<div class="fade-in-element">
+				<p class="p1">The rainfall will tell us about the world, and then the rainfall will stop. Like us, we will become old with time.</p>
+			</div>
+			<div class="fade-in-element">
+				<p class="p1">Thanks for bein' with me. Now I'm sixteen years old. I will become too old.</p>
+			</div>
+			<div class="fade-in-element">
+				<p class="p1">happy birthday</p>
+			</div>
+			<div class="fade-in-element">
+				<p class="p1">-naufal</p>
+			</div>
+			<div class="fade-in-element">
+				<p class="p1">现在我十六岁了，请对我说：3。当时间继续流逝时，我们都会变成老人或女孩。世界就是这样出现的，时间也在继续。就像美丽的天空会在特定的时间消失一样，降雨也会在特定的时间停止。</p>
+			</div>
+			<div class="fade-in-element">
+				<h2>[HBD]</h2>
+			</div>
+			<div class="fade-in-element">
+				<img 
+				src="ya[5B436EE].png" 
+				width=625 
+				height=450 
+				alt="23/02"
+				oncontextmenu="return false;"
+				/>
+			</div>
+			<div class="fade-in-element">
+				<hr>
+			</div>
+			<div class="fade-in-element">
+				<p class="p2">the rain continues to pour down on the city, there has been no light from the sun for the last 8 months. This is the longest rain ever recorded in history. The city lights keep turning on from night to night, the city parks keep getting wet so they can't be used as city decorations. the streets of the city reflect the view of the city buildings. The rain continued to fall and never stopped. The water continued to fall as if it were dancing across the vast sky.</p>
+			</div>
+			<div class="fade-in-element">
+				<p class="p3">someone played the piano with the song "can't help falling in love" in the city park, the piano was very wet because of the rain. the person seems to be feeling deep love for the person he loves.</p>
+			</div>
+			<div class="fade-in-element">
+				<hr>
+			</div>
+			<div class="fade-in-element">
+				<a href="https://sxvzustr.carrd.co" target="_blank" class="custom-button">
+					<span class="button-text">HBD</span>		
+				</a>
+			</div>
+			<div class="fade-in-element">
+				<hr>
+			</div>
+			<div class="fade-in-element">
+				<p class="p3">If the song/ audio does not autoplay u can play it below. the audio is looped. anyway, song name is lvs(var).</p>
+			</div>
+			<div class="fade-in-element">
+				<div class="box-audio">
+					<audio controls autoplay loop>
+						<source src="lvs_var.mp3" type="audio/mpeg" />
+						Your browser does not support
+					</audio>
+				</div>
+			</div>
+			<div class="fade-in-element">
+				<div class="in">
+					<p class="p3">made by. miYoKo, sxvzustr, & noopalstr</p>
+				</div>
 			</div>
 		</div>
 	</body>
