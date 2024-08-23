@@ -203,7 +203,7 @@
 			
 				//I'm adding this section so I don't have to keep updating this pen every year :-)
 				//remove this if you don't need it
-				//let today = new Date(),
+				let today = new Date(),
 					dd = String(today.getDate()).padStart(2, "0"),
 					mm = String(today.getMonth() + 1).padStart(2, "0"),
 					yyyy = today.getFullYear(),
@@ -217,7 +217,7 @@
 				}
 				//end
 				
-				//const countDown = new Date(birthday).getTime(),
+				const countDown = new Date(birthday).getTime(),
 					x = setInterval(function() {    
 			
 					const now = new Date().getTime(),
